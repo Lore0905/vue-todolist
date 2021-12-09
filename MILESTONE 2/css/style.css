@@ -31,3 +31,11 @@ li {
     border-radius: 10px;
     padding: 5px 20px;
 }
+.done{
+    text-decoration: line-through;
+}
+.delete-list-todo{
+    cursor: pointer;
+    width: 30px;
+    font-size: 20px;
+}
