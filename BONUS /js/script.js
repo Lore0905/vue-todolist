@@ -33,6 +33,10 @@ var app = new Vue({
                 done: false
             });
             this.newTodo = '';
+        },
+        doneOrNotDone: function(index){
+            this.todo[index].done = !this.todo[index].done;
+            console.log(index)
         }
        
     }

@@ -25,7 +25,7 @@
 
             <div class="list-container">
                 <ul class="p-0 mt-3">
-                    <li v-for= '(element, index) in todo' class="d-flex justify-content-between" :class="{'done': element.done}">
+                    <li @click="doneOrNotDone(index)" v-for= '(element, index) in todo' class="d-flex justify-content-between" :class="{'done': element.done}">
                         {{element.text}}
 
                         <div class="delete-list-todo" @click="deleteTodo(index)">
