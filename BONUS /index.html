@@ -21,9 +21,12 @@
             <div class="add-word-container">
                 <input id="input-text" type="text" placeholder="add todo" v-model='newTodo' @keyup.enter='addNewLiTodo'>
                 <button id="add-button" @click="addNewLiTodo">Aggiungi</button>
+                <p>
+                    {{error}}
+                </p>
             </div>
 
-            <div class="list-container">
+            <div class="list-container" v-if="todo.length > 0">
                 <ul class="p-0 mt-3">
                     <li @click="doneOrNotDone(index)" v-for= '(element, index) in todo' class="d-flex justify-content-between" :class="{'done': element.done}">
                         {{element.text}}
@@ -34,6 +37,8 @@
                     </li>
                 </ul>
             </div>
+
+            
         </div>
 
     </div>

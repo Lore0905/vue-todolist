@@ -22,7 +22,9 @@ li {
     width: 100%;
     cursor: pointer;
 }
-
+li:hover{
+    font-weight: 700;
+}
 .list-container{
     width: 100%;
     height: 100%;

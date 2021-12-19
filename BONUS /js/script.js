@@ -3,6 +3,7 @@ Vue.config.devtools = true;
 var app = new Vue({
     el: '#root',
     data: {
+        error: '',
         newTodo: '',
         todo: [
             {
@@ -28,10 +29,20 @@ var app = new Vue({
             this.todo.splice(index, 1)
         },
         addNewLiTodo: function(){
-            this.todo.unshift({
-                text: this.newTodo,
-                done: false
-            });
+            const newTodoNoSpace = this.newTodo.trim();
+
+            if(newTodoNoSpace.length > 3){
+
+                this.todo.unshift({
+                    text: newTodoNoSpace,
+                    done: false
+                });
+
+            }
+            else if(newTodoNoSpace.length > 50){
+                this.error = 'mi dispaice, ma non può inserire più di 50 caratteri'
+            }
+
             this.newTodo = '';
         },
         doneOrNotDone: function(index){
